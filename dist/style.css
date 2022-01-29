@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cashflow-trend-component { 
+    max-width: 973px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cashflow-trend-component .months-boxes { 
+    display: flex;
+
+}
+
+.cashflow-trend-component .months-boxes .month-box { 
+
+}
+
+.cashflow-trend-component .months-boxes .month-box .title { 
+
+}
+
+.cashflow-trend-component .months-boxes .month-box .infos { 
+
+}
+
+.cashflow-trend-component .months-boxes .month-box .infos .document { 
+
+}
+
+.cashflow-trend-component .months-boxes .month-box .infos .document .count { 
+
+}
+
+.cashflow-trend-component .months-boxes .month-box .infos .document .title { 
+
+}
+
+.cashflow-trend-component .months-boxes .month-box .infos .money { 
+
+}

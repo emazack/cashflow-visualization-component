@@ -1,0 +1,34 @@
+{
+  "name": "cashflow-visualization-component",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emazack/cashflow-visualization-component.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emazack/cashflow-visualization-component/issues"
+  },
+  "homepage": "https://github.com/emazack/cashflow-visualization-component#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^17.0.13",
+    "@types/webpack": "^5.28.0",
+    "@webpack-cli/generators": "^2.4.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.2",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2",
+    "wepack-cli": "0.0.1-security"
+  }
+}
