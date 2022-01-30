@@ -5,7 +5,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.cashflow-trend-component { 
+.monthly-trend-component { 
     max-width: 973px;
     width: 100%;
     margin: 0 auto;
@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-.cashflow-trend-component   .month-box {
+.monthly-trend-component   .month-box {
     width: 80px;
     height: 110px;
     border-top: 1px solid #EBEDEE;
@@ -25,11 +25,15 @@
     cursor: pointer;
 }
 
-.cashflow-trend-component   .month-box:first-child { 
+.monthly-trend-component .month-box.active {
+    border-bottom: 2px solid #0D97D5; 
+}
+
+.monthly-trend-component   .month-box:first-child { 
     border-left: 1px solid #EBEDEE;
 }
 
-.cashflow-trend-component   .month-box .name { 
+.monthly-trend-component   .month-box .name { 
     border-bottom: 1px solid #EBEDEE;
     padding: 5px 8px;
     font-style: normal;
@@ -42,12 +46,12 @@
     margin-bottom: 27px;
 }
 
-.cashflow-trend-component   .month-box .infos {
+.monthly-trend-component   .month-box .infos {
     padding: 7px 8px;
     border-bottom: 1px solid #C6E7F5; 
 }
 
-.cashflow-trend-component   .month-box .infos .document { 
+.monthly-trend-component   .month-box .infos .document { 
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -58,15 +62,15 @@
     
 }
 
-.cashflow-trend-component   .month-box .infos .document .count { 
+.monthly-trend-component   .month-box .infos .document .count { 
     margin-right: 4px;
 }
 
-.cashflow-trend-component   .month-box .infos .document .text { 
+.monthly-trend-component   .month-box .infos .document .text { 
     
 }
 
-.cashflow-trend-component   .month-box .infos .money { 
+.monthly-trend-component   .month-box .infos .money { 
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
