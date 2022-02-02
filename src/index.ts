@@ -1,3 +1,4 @@
+import DragSelect from 'dragselect';
 
 function monthlyTrend(): void {
 
@@ -20,6 +21,19 @@ function monthlyTrend(): void {
     return Object.keys(listOfValue).find(key => listOfValue[key] === value);
   }
 
+  function generateValue(min:number, max:number, value: number, maxDivHeight: number): number {
+    for (let index = min; index <= max; index++) {
+      if (index === value) {
+        return (index * maxDivHeight) / max;
+      } 
+    }
+  }
+
+  function printMonth() {
+    let outputArea = document.
+    
+  }
+
 
   async function getData() {
     let url: string = "http://staccah.fattureincloud.it/testfrontend/data.json";
@@ -30,25 +44,39 @@ function monthlyTrend(): void {
       console.error(error);
     }
   }
-
+  
   async function renderComponent(): Promise<HTMLDivElement> {
+    const data = await getData();
+    let monthBoxes: Array<HTMLDivElement> = [];
+    let maxValue: number = 0;
+    let minValue: number = 0;
+    let amountArray = [];
+    //create component div container
     const component: HTMLDivElement = document.createElement('div');
     component.classList.add("monthly-trend-component");
 
-    let data = await getData();
+    // data for the value bar
+    data.mesi.forEach((month) => {
+      amountArray.push(month.importo);
+      maxValue = Math.max(...amountArray);
+      minValue = Math.min(...amountArray);
+    });
+    
     data.mesi.forEach((month, index) => {
-        let monthBox: HTMLDivElement = document.createElement('div');
-        monthBox.classList.add("month-box");
-        component.appendChild(monthBox); 
-        monthBox.addEventListener("click", () =>{
-          monthBox.classList.toggle("active");
-        })          
-        let singleHtmlElement: string = 
+      //create and handle the html elements
+      let monthBox: HTMLDivElement = document.createElement('div');
+      monthBox.classList.add("month-box");
+      component.appendChild(monthBox);
+      monthBoxes.push(monthBox);
+      // Compose the content of the month box with dynamic data    
+        let htmlContent: string = 
         `
           <div class="name">
             ${getMonth(listOfMonths, index)}
           </div>
           <div class="infos">
+            <div style=height:${generateValue(minValue, maxValue, month.importo, 78)}px class="value-bar">           
+            </div>
             <div class="document">
               <div class="count">
                 ${month.documenti}
@@ -62,25 +90,29 @@ function monthlyTrend(): void {
             </div>
           </div>
         `;
-
-        monthBox.innerHTML += singleHtmlElement;
-    });
-    
+        monthBox.innerHTML += htmlContent;
+        
+        // Add and remove selection from month boxes
+        monthBox.addEventListener("click", () =>{
+          let selectedMonth = monthBox.firstElementChild.innerHTML;
+          monthBoxes.forEach(arrayElement => {
+            arrayElement.classList.remove("active");
+          });
+          monthBox.classList.add("active");
+        }) 
+        //handle the multple selection with mouse click and drag
+        new DragSelect({
+          selectables: monthBoxes,
+          draggability: false,
+          selectedClass: "active"
+        });
+      });
+      
     return await document.body.appendChild(component);
   }
 
   renderComponent();
-
-function selectComponent() {
-  const listOfMonthBoxes: NodeListOf<HTMLDivElement> = document.querySelectorAll(".month-box");
-  listOfMonthBoxes.forEach(monthBox => {
-    monthBox.addEventListener("click", () =>{
-      console.log("click");
-    })
-  });
- }
-
- selectComponent();
+  
 }
 
 monthlyTrend();

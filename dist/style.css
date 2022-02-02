@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 .monthly-trend-component { 
@@ -43,12 +49,14 @@
     display: flex;
     align-items: center;
     color: #0D97D5;
-    margin-bottom: 27px;
 }
 
 .monthly-trend-component   .month-box .infos {
     padding: 7px 8px;
-    border-bottom: 1px solid #C6E7F5; 
+    border-bottom: 1px solid #C6E7F5;
+    padding-top: 34px; 
+    position: relative;
+    z-index: 1;
 }
 
 .monthly-trend-component   .month-box .infos .document { 
@@ -60,6 +68,16 @@
     align-items: center;
     color: #6F7E86;
     
+}
+
+.monthly-trend-component   .month-box .infos .value-bar { 
+    background-color: #E0F1EB;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
 }
 
 .monthly-trend-component   .month-box .infos .document .count { 
