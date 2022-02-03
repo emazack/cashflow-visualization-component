@@ -1,5 +1,5 @@
 {
-  "name": "cashflow-visualization-component",
+  "name": "monthly-trend-component",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emazack/cashflow-visualization-component.git"
+    "url": "git+https://github.com/emazack/monthly-trend-component.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emazack/cashflow-visualization-component/issues"
+    "url": "https://github.com/emazack/monthly-trend-component/issues"
   },
-  "homepage": "https://github.com/emazack/cashflow-visualization-component#readme",
+  "homepage": "https://github.com/emazack/monthly-trend-componentt#readme",
   "devDependencies": {
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.13",
