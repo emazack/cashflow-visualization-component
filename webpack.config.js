@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/monthly-trend.ts',
   devtool: 'inline-source-map',
   watch: true,
     watchOptions: {
