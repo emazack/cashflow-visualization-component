@@ -4,7 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/emazack/monthly-trend-component/issues"
   },
-  "homepage": "https://github.com/emazack/monthly-trend-componentt#readme",
+  "homepage": "https://emazack.github.io/monthly-trend-component",
   "devDependencies": {
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.13",
@@ -32,6 +33,7 @@
     "wepack-cli": "0.0.1-security"
   },
   "dependencies": {
-    "dragselect": "^2.3.0"
+    "dragselect": "^2.3.0",
+    "gh-pages": "^4.0.0"
   }
 }

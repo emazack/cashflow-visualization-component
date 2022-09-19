@@ -127,8 +127,8 @@ function monthlyTrend(): void {
       });
     return await document.body.appendChild(component);
   }
-  // call the rendering of the component
+  // invoke the rendering of the component
   renderComponent();
 }
-// call the component and its funcionalities
+// invoke the component and its funcionalities
 monthlyTrend();
