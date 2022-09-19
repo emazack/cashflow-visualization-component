@@ -54,8 +54,9 @@ function monthlyTrend(): void {
     }
   }
   // get the data from the end point
+  //If you have an API to contact, invoke it.
   async function getData() {
-    let url: string = "http://staccah.fattureincloud.it/testfrontend/data.json";
+    let url: string = "http://API-TO-CONTACT/data.json";
     try {
       let res = await fetch(url);
       return await res.json();
@@ -65,7 +66,9 @@ function monthlyTrend(): void {
   }
   // render the component with the value and handle its funcionality
   async function renderComponent(): Promise<HTMLDivElement> {
-    const data = await getData();
+    //If you have an API to contact, remove comments
+    // const data = await getData();
+    const data = {"mesi":[{"documenti":5,"importo":39375},{"documenti":11,"importo":4104},{"documenti":8,"importo":33108},{"documenti":39,"importo":10137},{"documenti":21,"importo":8022},{"documenti":26,"importo":7609},{"documenti":25,"importo":32254},{"documenti":13,"importo":26772},{"documenti":24,"importo":46155},{"documenti":42,"importo":17016},{"documenti":23,"importo":29394},{"documenti":18,"importo":18829}]};
     let monthBoxes: Array<HTMLDivElement> = [];
     let maxValue: number = 0;
     let minValue: number = 0;
